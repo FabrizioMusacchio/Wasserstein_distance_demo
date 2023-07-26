@@ -35,3 +35,8 @@ And the resulting optimal transport plan:
 
 The corresponding Wasserstein distance is $W_1 = \sim0.1658$.
 
+Comparing Wasserstein distance , slide Wasserstein distance (SWD), and L2 norm:
+
+![img](images/wasserstein_l2_animation_m2.gif)
+![img](images/wasserstein_l2_animation_s2.gif)
+
