@@ -228,31 +228,46 @@ def update(num):
     L2_dist = l2_distances[num]
 
     # plot the distributions:
+    lw_axes=1.5
     axs[0].plot(xs[:, 0], xs[:, 1], '+', label=f'Source (random normal,\n $\mu_1$={m1}, $\sigma_1$={s_1})')
     axs[0].plot(xt[:, 0], xt[:, 1], 'x', label=f'Target (random normal,\n $\mu_2$={m2.round(2)}, $\sigma_2$={s_2})')
     axs[0].legend(loc="upper left", fontsize=10)
-    axs[0].set_xlabel('x')
-    axs[0].set_ylabel('y')
+    axs[0].set_xlabel('x', fontweight="normal", fontsize=14)
+    axs[0].set_ylabel('y', fontweight="normal", fontsize=14)
     axs[0].set_xlim(-10, n_max+10)
     axs[0].set_ylim(-10, n_max+10)
     axs[0].set_title(f'Source and target distributions\nWasserstein distance: {w_dist}'+
                      f'\nSliced Wasserstein distance: {w_dist_sliced}'+
-                     f'\nL2 distance: {L2_dist}')
+                     f'\nL2 distance: {L2_dist}', fontweight="normal", fontsize=14)
+    axs[0].spines['top'].set_linewidth(lw_axes)
+    axs[0].spines['right'].set_linewidth(lw_axes)
+    axs[0].spines['left'].set_linewidth(lw_axes)
+    axs[0].spines['bottom'].set_linewidth(lw_axes)
+    axs[0].tick_params(axis='x', which='major', labelsize=14, width=lw_axes)
+    axs[0].tick_params(axis='y', which='major', labelsize=14, width=lw_axes)
 
     # plot the distances:
-    axs[1].plot(m2_values[:num+1], wasserstein_distances[:num+1], label='Wasserstein distance')
-    axs[1].plot(m2_values[:num+1], wasserstein_distances_sliced[:num+1], label='sliced Wasserstein distance')
-    axs[1].plot(m2_values[:num+1], l2_distances[:num+1], label='L2 distance')
+    axs[1].plot(m2_values[:num+1], wasserstein_distances[:num+1], label='Wasserstein distance', lw=2.5)
+    axs[1].plot(m2_values[:num+1], wasserstein_distances_sliced[:num+1], label='sliced Wasserstein distance', lw=2.5)
+    axs[1].plot(m2_values[:num+1], l2_distances[:num+1], label='L2 distance', lw=2.5)
     axs[1].legend()
-    axs[1].set_xlabel('$\mu_2$ (equal in both dimensions)')
-    axs[1].set_ylabel('Distance')
-    axs[1].set_title('Evolution of Wasserstein and L2 distances with increasing $\mu_2$')
+    axs[1].set_xlabel('$\mu_2$ (equal in both dimensions)', fontweight="normal", fontsize=14)
+    axs[1].set_ylabel('Distance', fontweight="normal", fontsize=14)
+    axs[1].set_title('Evolution of Wasserstein and L2 distances\nwith increasing $\mu_2$', 
+                     fontweight="normal", fontsize=14)
     axs[1].grid(True)
+    axs[1].spines['top'].set_linewidth(lw_axes)
+    axs[1].spines['right'].set_linewidth(lw_axes)
+    axs[1].spines['bottom'].set_linewidth(lw_axes)
+    axs[1].spines['left'].set_linewidth(lw_axes)
+    axs[1].tick_params(axis='x', which='major', labelsize=14, width=lw_axes)
+    axs[1].tick_params(axis='y', which='major', labelsize=14, width=lw_axes)
     
     plt.tight_layout()
 
 ani = animation.FuncAnimation(fig, update, frames=len(m2_values), repeat=False)
 ani.save('images/wasserstein_l2_animation_m2.gif', writer='imagemagick', fps=10)
+plt.savefig('images/wasserstein_l2_animation_m2.png', dpi=200)
 plt.close(fig)
 # %% DISCRETE SAMPLES (RUNNING s2, ANIMATION)
 # generate two 2D gaussian samples sets:
@@ -316,31 +331,46 @@ def update(num):
     L2_dist = l2_distances[num]
 
     # plot the distributions:
+    lw_axes=1.5
     axs[0].plot(xs[:, 0], xs[:, 1], '+', label=f'Source (random normal,\n $\mu_1$={m1}, $\sigma_1$={s_1})')
     axs[0].plot(xt[:, 0], xt[:, 1], 'x', label=f'Target (random normal,\n $\mu_2$={m2.round(2)}, $\sigma_2$={s_2.round(2)})')
     axs[0].legend(loc="upper left", fontsize=10)
-    axs[0].set_xlabel('x')
-    axs[0].set_ylabel('y')
+    axs[0].set_xlabel('x', fontweight="normal", fontsize=14)
+    axs[0].set_ylabel('y', fontweight="normal", fontsize=14)
     axs[0].set_xlim(-25, 25)
     axs[0].set_ylim(-25, 25)
     axs[0].set_title(f'Source and target distributions\nWasserstein distance: {w_dist}'+
                      f'\nSliced Wasserstein distance: {w_dist_sliced}'+
-                     f'\nL2 distance: {L2_dist}')
+                     f'\nL2 distance: {L2_dist}', fontweight="normal", fontsize=14)
+    axs[0].spines['top'].set_linewidth(lw_axes)
+    axs[0].spines['right'].set_linewidth(lw_axes)
+    axs[0].spines['left'].set_linewidth(lw_axes)
+    axs[0].spines['bottom'].set_linewidth(lw_axes)
+    axs[0].tick_params(axis='x', which='major', labelsize=14, width=lw_axes)
+    axs[0].tick_params(axis='y', which='major', labelsize=14, width=lw_axes)
 
     # plot the distances:
-    axs[1].plot(s2_values[:num+1], wasserstein_distances[:num+1], label='Wasserstein distance')
-    axs[1].plot(s2_values[:num+1], wasserstein_distances_sliced[:num+1], label='sliced Wasserstein distance')
-    axs[1].plot(s2_values[:num+1], l2_distances[:num+1], label='L2 distance')
+    axs[1].plot(s2_values[:num+1], wasserstein_distances[:num+1], label='Wasserstein distance', lw=2.5)
+    axs[1].plot(s2_values[:num+1], wasserstein_distances_sliced[:num+1], label='sliced Wasserstein distance', lw=2.5)
+    axs[1].plot(s2_values[:num+1], l2_distances[:num+1], label='L2 distance', lw=2.5)
     axs[1].legend()
-    axs[1].set_xlabel('$\sigma_2$ (equal in both dimensions)')
-    axs[1].set_ylabel('Distance')
-    axs[1].set_title('Evolution of Wasserstein and L2 distances with increasing $\sigma_2$')
+    axs[1].set_xlabel('$\sigma_2$ (equal in both dimensions)', fontweight="normal", fontsize=14)
+    axs[1].set_ylabel('Distance', fontweight="normal", fontsize=14)
+    axs[1].set_title('Evolution of Wasserstein and L2 distances\nwith increasing $\sigma_2$', 
+                     fontweight="normal", fontsize=14)
     axs[1].grid(True)
+    axs[1].spines['top'].set_linewidth(lw_axes)
+    axs[1].spines['right'].set_linewidth(lw_axes)
+    axs[1].spines['bottom'].set_linewidth(lw_axes)
+    axs[1].spines['left'].set_linewidth(lw_axes)
+    axs[1].tick_params(axis='x', which='major', labelsize=14, width=lw_axes)
+    axs[1].tick_params(axis='y', which='major', labelsize=14, width=lw_axes)
     
     plt.tight_layout()
 
 ani = animation.FuncAnimation(fig, update, frames=len(s2_values), repeat=False)
 ani.save('images/wasserstein_l2_animation_s2.gif', writer='imagemagick', fps=10)
+plt.savefig('images/wasserstein_l2_animation_s2.png', dpi=200)
 plt.close(fig)
 # %% # %% 2D GAUSSIAN DISTRIBUTIONS
 """
