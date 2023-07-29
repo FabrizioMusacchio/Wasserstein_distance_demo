@@ -21,7 +21,7 @@ pip install POT
 ```
 
 
-## Example
+## Examples
 Two example distributions (source and target):
 
 ![img](images/wasserstein_distributions.png)
