@@ -6,6 +6,7 @@ This repository contains the code for the blog posts on
 * [Wasserstein distance via entropy regularization (Sinkhorn algorithm)](https://www.fabriziomusacchio.com/blog/2023-07-23-wasserstein_distance_skinhorn)
 * [Approximating the Wasserstein distance with cumulative distribution functions ](https://www.fabriziomusacchio.com/blog/2023-07-24-wasserstein_distance_cdf_approximation/)
 * [Comparing Wasserstein distance, sliced Wasserstein distance, and L2 norm ](https://www.fabriziomusacchio.com/blog/2023-07-26-wasserstein_vs_l2_norm/)
+* [Probability distance metrics in machine learning](https://www.fabriziomusacchio.com/blog/2023-07-28-probability_density_metrics/)
 
 For further details, please refer to this post.
 
