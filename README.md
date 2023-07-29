@@ -8,7 +8,7 @@ This repository contains the code for the following blog posts:
 * [Comparing Wasserstein distance, sliced Wasserstein distance, and L2 norm ](https://www.fabriziomusacchio.com/blog/2023-07-26-wasserstein_vs_l2_norm/)
 * [Probability distance metrics in machine learning](https://www.fabriziomusacchio.com/blog/2023-07-28-probability_density_metrics/)
 
-For further details, please refer to this post.
+For further details, please refer to these posts.
 
 For reproducibility:
 
