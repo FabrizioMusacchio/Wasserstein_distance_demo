@@ -1,6 +1,6 @@
 # Wasserstein metric
 
-This repository contains the code for the blog posts on 
+This repository contains the code for the following blog posts:
 
 * [Wasserstein distance and optimal transport](https://www.fabriziomusacchio.com/blog/2023-07-22-wasserstein_distance)
 * [Wasserstein distance via entropy regularization (Sinkhorn algorithm)](https://www.fabriziomusacchio.com/blog/2023-07-23-wasserstein_distance_skinhorn)
